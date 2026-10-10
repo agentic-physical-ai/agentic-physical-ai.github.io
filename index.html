@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101b24">
+<title>Agentic Physical AI · Proposed ICLR 2027 Workshop</title>
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<style>
+:root{--ink:#14242d;--muted:#52636b;--paper:#f7f7f1;--white:#fff;--line:#dce3dd;--teal:#137d73;--lime:#d9ef9d;--dark:#101b24}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}button{font:inherit}h1,h2,h3,p{margin-top:0}h1,h2,h3{line-height:1.12;letter-spacing:-.04em}h1{font-size:clamp(3.2rem,8vw,7.4rem);max-width:1050px;margin-bottom:25px}h2{font-size:clamp(2.2rem,4.8vw,4.3rem);margin-bottom:20px}h3{font-size:1.35rem;letter-spacing:-.025em}.wrap{width:min(1180px,calc(100% - 48px));margin:auto}.eyebrow{font-size:.74rem;font-weight:800;letter-spacing:.15em;text-transform:uppercase}.muted{color:var(--muted)}.pill{display:inline-block;padding:7px 12px;border:1px solid currentColor;border-radius:99px;font-size:.72rem;font-weight:750;letter-spacing:.08em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:10;background:#f7f7f1ef;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}.nav{display:flex;align-items:center;gap:26px;min-height:72px}.brand{margin-right:auto;text-decoration:none;font-size:.94rem;line-height:1.12;font-weight:900;letter-spacing:-.035em}.brand span{display:block;color:var(--teal);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;margin-top:3px}.navlinks{display:flex;align-items:center;gap:25px}.navlinks a{font-size:.85rem;font-weight:700;text-decoration:none}.navlinks a:hover,.textlink:hover{color:var(--teal)}.navcta,.button{color:var(--ink);display:inline-flex;justify-content:center;align-items:center;gap:12px;border-radius:7px;background:var(--lime);padding:13px 18px;text-decoration:none;font-weight:800;font-size:.86rem;white-space:nowrap;transition:transform .2s,background .2s}.navcta:hover,.button:hover{transform:translateY(-2px);background:#e5f6b8}.button.secondary{background:transparent;color:#fff;border:1px solid #ffffff66}.button.secondary:hover{background:#ffffff1c}
+.hero{overflow:hidden;color:#fff;background:radial-gradient(circle at 80% 18%,#235952 0,transparent 30%),linear-gradient(135deg,#101b24 25%,#193b3a 100%);padding:92px 0 100px;position:relative}.hero:before{content:"";position:absolute;inset:0;background:url(assets/hero-topo.svg) center/cover no-repeat;opacity:.075;-webkit-mask-image:linear-gradient(90deg,transparent 18%,#000 70%);mask-image:linear-gradient(90deg,transparent 18%,#000 70%);pointer-events:none}.hero .wrap{position:relative;z-index:1}.hero .eyebrow{color:var(--lime);margin-bottom:26px}.hero h1 em{font-style:normal;color:var(--lime)}.hero .intro{font-size:clamp(1.1rem,2vw,1.42rem);line-height:1.5;max-width:680px;color:#d2dfdb;margin-bottom:34px}.actions{display:flex;flex-wrap:wrap;gap:12px}.hero-facts{display:flex;flex-wrap:wrap;gap:32px;margin-top:80px;padding-top:22px;border-top:1px solid #ffffff3b}.hero-facts div{display:grid;gap:2px}.hero-facts b{font-size:.92rem}.hero-facts small{color:#b6c9c4;font-size:.73rem;text-transform:uppercase;letter-spacing:.1em}
+section{padding:100px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:42px}.section-head>p{max-width:470px;margin-bottom:3px}.section-head h2{max-width:700px;margin-bottom:0}.section-kicker{color:var(--teal);margin-bottom:16px}.lead{font-size:1.25rem;max-width:850px;color:#384b51}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.theme{min-height:295px;padding:30px;border:1px solid var(--line);background:var(--white);display:flex;flex-direction:column}.theme .number{color:var(--teal);font-size:.79rem;font-weight:800}.theme h3{font-size:1.65rem;margin-top:50px;margin-bottom:13px}.theme p{color:var(--muted);margin-bottom:0}.scope{margin:22px 0 0;max-width:850px;padding:16px 20px;border-left:3px solid var(--teal);background:#fff;color:var(--muted);font-size:.98rem}.scope strong{color:var(--ink)}.question{margin-top:15px;background:#e9f0e8;padding:28px 32px;display:flex;justify-content:space-between;gap:35px;align-items:center}.question strong{font-size:1.25rem;letter-spacing:-.025em}.question p{max-width:650px;margin:0;color:#496058}
+.dark{background:var(--dark);color:white}.dark .section-kicker{color:var(--lime)}.dark .muted{color:#b9c8c9}.callout{display:grid;grid-template-columns:1fr 1fr;gap:70px}.callout h2{max-width:580px}.callout p{color:#c5d2d1}.topic-list{display:grid;grid-template-columns:1fr 1fr;gap:8px}.topic-list span{padding:14px 16px;border:1px solid #ffffff2b;font-size:.9rem}.submission{margin-top:54px;background:#1e343b;display:grid;grid-template-columns:1.3fr 1fr;gap:35px;padding:32px;border-left:4px solid var(--lime)}.submission p{margin:8px 0 0;color:#c5d2d1}.submission .note{font-size:.9rem}
+.people{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px}.people .avatar{width:112px;height:112px}.person{background:#fff;border:1px solid var(--line);padding:24px 10px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}.person h3{margin:18px 0 4px;font-size:1.12rem}.person h3 a,.organizers strong a{text-decoration:none}.person h3 a:hover,.organizers strong a:hover{color:var(--teal)}.person p{color:var(--muted);font-size:.84rem;line-height:1.45;margin:0}.person p.topic{font-size:.8rem;color:#6d7d83;margin:6px 0 16px}.person .pill{margin-top:auto;color:var(--teal);border-color:#b9d9cf;font-size:.58rem;letter-spacing:.04em;padding:5px 8px;white-space:nowrap}.speakers-note{margin-top:20px;color:var(--muted);font-size:.89rem}.avatar{position:relative;display:grid;place-items:center;width:124px;height:124px;flex:none;border-radius:50%;overflow:hidden;background:#e2ebe4;border:1px solid var(--line);text-decoration:none}.avatar:before{content:attr(data-i);font-size:2rem;font-weight:800;letter-spacing:-.03em;color:var(--teal)}.avatar img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .25s}.avatar:hover img{transform:scale(1.05)}
+.timeline{background:#eaf0e7}.dates{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#c9d5cb;border:1px solid #c9d5cb}.date{padding:25px;background:#f7f9f3;min-height:160px}.date b{display:block;font-size:1.12rem;margin-bottom:17px;letter-spacing:-.025em}.date span{font-size:.88rem;color:var(--muted)}.dates-note{font-size:.85rem;color:var(--muted);margin:19px 0 0}
+.schedule{display:grid;grid-template-columns:1fr 1.7fr;gap:80px}.schedule aside{position:sticky;top:110px;align-self:start}.schedule aside p{max-width:380px;color:var(--muted)}.agenda{border-top:1px solid #c9d4d1}.slot{display:grid;grid-template-columns:112px 1fr;gap:12px;border-bottom:1px solid #d7dfda;padding:16px 0}.slot time{font-weight:800;color:var(--teal);font-size:.87rem}.slot strong{font-size:.96rem}.slot small{display:block;color:var(--muted);margin-top:2px}.slot.highlight{background:#e8efe2;margin:0 -15px;padding:16px 15px}
+.panel{background:#ddefaa;padding:42px 0}.panel .wrap{display:flex;justify-content:space-between;gap:40px;align-items:center}.panel h2{font-size:clamp(1.8rem,3.5vw,3rem);max-width:730px;margin:0}.panel p{max-width:330px;margin:0}
+.organizers{display:grid;grid-template-columns:repeat(4,1fr);gap:34px 11px;margin-top:42px}.organizers div{text-align:center;display:flex;flex-direction:column;align-items:center}.organizers .avatar{margin-bottom:14px}.organizers strong,.organizers small{display:block}.organizers small{color:var(--muted);margin-top:3px;font-size:.86rem}
+.faq{background:#eaf0e7}.faqgrid{display:grid;grid-template-columns:1fr 1.5fr;gap:80px}.faq details{border-top:1px solid #bfcfc2;padding:20px 0}.faq details:last-child{border-bottom:1px solid #bfcfc2}.faq summary{cursor:pointer;font-weight:750;list-style:none;display:flex;justify-content:space-between;gap:10px}.faq summary::-webkit-details-marker{display:none}.faq summary:after{content:"+";font-size:1.3rem;line-height:1}.faq details[open] summary:after{content:"−"}.faq details p{margin:14px 30px 0 0;color:var(--muted);font-size:.92rem}
+footer{background:var(--dark);color:#c9d5d2;padding:40px 0}.foot{display:flex;justify-content:space-between;gap:30px;align-items:start}.foot strong{color:#fff}.foot small{max-width:480px}.foot a{color:var(--lime)}
+@media(max-width:1100px){.people{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:850px){.navlinks{display:none}.hero{padding:70px 0}.hero-facts{margin-top:55px}.grid3{grid-template-columns:1fr 1fr}.people{grid-template-columns:repeat(3,minmax(0,1fr))}.callout,.schedule,.faqgrid{grid-template-columns:1fr;gap:30px}.schedule aside{position:static}.dates,.organizers{grid-template-columns:1fr 1fr}.submission{grid-template-columns:1fr}.section-head{display:block}.section-head>p{margin-top:20px}}
+@media(max-width:600px){.wrap{width:min(100% - 34px,1180px)}section{padding:68px 0}.nav{min-height:63px}.navcta{font-size:.75rem;padding:10px}.hero h1{font-size:clamp(3rem,13vw,5rem)}.hero-facts{gap:20px}.hero-facts div{width:43%}.grid3,.dates,.topic-list{grid-template-columns:1fr}.people,.organizers{grid-template-columns:1fr 1fr}.avatar{width:104px;height:104px}.person{padding:20px 12px}.theme{min-height:0}.theme h3{margin-top:35px}.question,.panel .wrap,.foot{display:block}.question p,.panel p{margin-top:15px}.date{min-height:0}.slot{grid-template-columns:80px 1fr}.panel{padding:35px 0}.foot>*{display:block;margin-bottom:15px}}
+</style>
+</head>
+<body>
+<header>
+  <nav class="nav wrap" aria-label="Main navigation">
+    <a class="brand" href="#top">AGENTIC PHYSICAL AI<span>ICLR 2027 · Workshop proposal</span></a>
+    <div class="navlinks"><a href="#about">About</a><a href="#topics">Topics</a><a href="#speakers">Speakers</a><a href="#program">Program</a><a href="#dates">Dates</a></div>
+    <a class="navcta" href="#contribute">Call for papers <span aria-hidden="true">↗</span></a>
+  </nav>
+</header>
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="eyebrow">Proposed one-day, in-person workshop · ICLR 2027</div>
+      <h1>Agentic <em>Physical AI</em></h1>
+      <p class="intro">Generalization, reasoning, and learning through interaction. What can general-purpose agents bring to physical action, and what must they learn from the world?</p>
+      <div class="actions"><a class="button" href="#contribute">Explore the call for papers <span aria-hidden="true">↗</span></a><a class="button secondary" href="#about">Discover the workshop <span aria-hidden="true">↓</span></a></div>
+      <div class="hero-facts">
+        <div><small>Format</small><b>One day · In person</b></div>
+        <div><small>Keywords</small><b>Agents · RL · Robotics · Physical systems</b></div>
+        <div><small>Workshop date</small><b>To be assigned by ICLR</b></div>
+        <div><small>Status</small><b>Proposal for ICLR 2027</b></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="about">
+    <div class="wrap">
+      <div class="eyebrow section-kicker">The central question</div>
+      <h2>Pretrained, reasoned, or learned through interaction: where does physical competence come from?</h2>
+      <p class="lead">General-purpose agents now interpret observations, write programs, call tools, and act on the world. When one succeeds, it is rarely clear why. Was it pretrained knowledge, extra reasoning at decision time, a specialist controller, or experience gained through interaction? This workshop uses the physical world as a test bed for that machine-learning question.</p>
+      <p class="scope"><strong>What counts as physical?</strong> Any setting where an agent's actions change a physical process and feedback comes from the world or a physics simulator: robots and vehicles, but also energy and industrial control, laboratory automation, and other physical systems.</p>
+      <div class="grid3" style="margin-top:42px">
+        <article class="theme"><span class="number">01 / PRETRAINED</span><h3>Generalize to new tasks</h3><p>What transfers from data the agent never generated (web-scale text, images, video, code, and others’ demonstrations) to new environments, tasks, and embodiments?</p></article>
+        <article class="theme"><span class="number">02 / REASONED</span><h3>Reason before acting</h3><p>When does extra computation at decision time (planning, search, code generation, simulation) improve closed-loop decisions, with no new feedback from the world?</p></article>
+        <article class="theme"><span class="number">03 / LEARNED THROUGH INTERACTION</span><h3>Learn through interaction</h3><p>How can the agent’s own actions and their consequences revise its memory, world model, strategy, or parameters?</p></article>
+      </div>
+      <div class="question"><strong>From compelling demos to tests that explain why an agent succeeds or fails.</strong><p>We especially welcome careful comparisons, diagnostic evaluations, work in progress, and negative results.</p></div>
+    </div>
+  </section>
+
+  <section class="dark" id="topics">
+    <div class="wrap">
+      <div class="callout">
+        <div><div class="eyebrow section-kicker">Research themes</div><h2>Build, test, act, revise.</h2><p>The workshop connects language and coding agents with multimodal learning, reinforcement learning, robotics, autonomous driving, simulation, and ML for physical systems. We ask for evidence that explains a gain: ablations, scaling with computation or interaction, and tests on held-out tasks.</p></div>
+        <div class="topic-list" aria-label="Example topics">
+          <span>Transfer across tasks and embodiments</span><span>Spatial and visual representations</span>
+          <span>Executable action abstractions</span><span>Planning, search, and tool use</span>
+          <span>Agent-built simulations and world models</span><span>Active experimentation and adaptation</span>
+          <span>Grounding, uncertainty, and recovery</span><span>Capability attribution and evaluation</span>
+          <span>Scaling with inference and interaction budgets</span><span>Agents for energy, industrial, and lab systems</span>
+        </div>
+      </div>
+      <div class="submission" id="contribute">
+        <div><div class="eyebrow" style="color:var(--lime)">Call for papers · proposed</div><h3 style="font-size:1.7rem;margin:12px 0">Contribute a question worth testing.</h3><p>Non-archival research papers up to 8 pages and short papers of 2–4 pages excluding references and appendices. Physical systems and simulation are both welcome. Hardware is not required. Negative results and analysis are welcome.</p><p><strong style="color:#fff">Position papers welcome.</strong> Submit them to the short-paper track. A position paper should state a testable claim about where physical competence comes from and propose an experiment that could support or refute it. Accepted positions will feed the workshop’s experimental agenda.</p></div>
+        <div class="note"><strong>Review and AI-use policy</strong><p>Submissions are planned to be anonymous, with at least two reviews and conflict-aware assignments. AI assistance is permitted with disclosure of substantive use; authors remain responsible for originality and accuracy. Short papers, including position papers, must be primarily human-authored. Submission instructions and a link will be added when the call opens.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="speakers">
+    <div class="wrap">
+      <div class="section-head"><div><div class="eyebrow section-kicker">Invited voices</div><h2>Across agents and physical systems.</h2></div><p class="muted">Speaker topics are tentative.</p></div>
+      <div class="people">
+        <article class="person"><a class="avatar" href="https://goldberg.berkeley.edu/" target="_blank" rel="noopener" data-i="KG"><img src="photos/ken-goldberg.jpg" alt="Ken Goldberg" loading="lazy" onerror="this.remove()"></a><h3><a href="https://goldberg.berkeley.edu/" target="_blank" rel="noopener">Ken Goldberg</a></h3><p>UC Berkeley</p><p class="topic">Organizer; opens the workshop and moderates the panel</p><span class="pill">Moderator · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://people.csail.mit.edu/lpk/" target="_blank" rel="noopener" data-i="LK"><img src="photos/leslie-kaelbling.jpg" alt="Leslie Pack Kaelbling" loading="lazy" onerror="this.remove()"></a><h3><a href="https://people.csail.mit.edu/lpk/" target="_blank" rel="noopener">Leslie Pack Kaelbling</a></h3><p>MIT</p><p class="topic">Robot learning and planning</p><span class="pill">Panelist · Tentative</span></article>
+        <article class="person"><a class="avatar" href="https://danielkhashabi.com/" target="_blank" rel="noopener" data-i="DK"><img src="photos/daniel-khashabi.jpg" alt="Daniel Khashabi" loading="lazy" onerror="this.remove()"></a><h3><a href="https://danielkhashabi.com/" target="_blank" rel="noopener">Daniel Khashabi</a></h3><p>Johns Hopkins University</p><p class="topic">Reasoning-driven AI systems</p><span class="pill">Speaker &amp; panelist</span></article>
+        <article class="person"><a class="avatar" href="https://irom-lab.princeton.edu/majumdar" target="_blank" rel="noopener" data-i="AM"><img src="photos/anirudha-majumdar.jpg" alt="Anirudha Majumdar" loading="lazy" onerror="this.remove()"></a><h3><a href="https://irom-lab.princeton.edu/majumdar" target="_blank" rel="noopener">Anirudha Majumdar</a></h3><p>Princeton University</p><p class="topic">Generalization guarantees for robots</p><span class="pill">Speaker · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://people.eecs.berkeley.edu/~malik/" target="_blank" rel="noopener" data-i="JM"><img src="photos/jitendra-malik.jpg" alt="Jitendra Malik" loading="lazy" onerror="this.remove()"></a><h3><a href="https://people.eecs.berkeley.edu/~malik/" target="_blank" rel="noopener">Jitendra Malik</a></h3><p>UC Berkeley</p><p class="topic">Learning from sensorimotor experience</p><span class="pill">Speaker &amp; panelist</span></article>
+        <article class="person"><a class="avatar" href="https://web.stanford.edu/~pavone/" target="_blank" rel="noopener" data-i="MP"><img src="photos/marco-pavone.jpg" alt="Marco Pavone" loading="lazy" onerror="this.remove()"></a><h3><a href="https://web.stanford.edu/~pavone/" target="_blank" rel="noopener">Marco Pavone</a></h3><p>Stanford University &amp; NVIDIA</p><p class="topic">Autonomous systems</p><span class="pill">Speaker · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://thoth.inrialpes.fr/~schmid/" target="_blank" rel="noopener" data-i="CS"><img src="photos/cordelia-schmid.jpg" alt="Cordelia Schmid" loading="lazy" onerror="this.remove()"></a><h3><a href="https://thoth.inrialpes.fr/~schmid/" target="_blank" rel="noopener">Cordelia Schmid</a></h3><p>Inria</p><p class="topic">Visual understanding and manipulation</p><span class="pill">Panelist · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://plus.sist.shanghaitech.edu.cn/author/qiuyue-wang/" target="_blank" rel="noopener" data-i="QW"><img src="photos/qiuyue-wang.jpg" alt="Qiuyue Wang" loading="lazy" onerror="this.remove()"></a><h3><a href="https://plus.sist.shanghaitech.edu.cn/author/qiuyue-wang/" target="_blank" rel="noopener">Qiuyue Wang</a></h3><p>Qwen, Alibaba</p><p class="topic">General-purpose agents and vision–language–action models</p><span class="pill">Speaker · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://researchers.adelaide.edu.au/profile/qi.wu01" target="_blank" rel="noopener" data-i="QW"><img src="photos/qi-wu.jpg" alt="Qi Wu" loading="lazy" onerror="this.remove()"></a><h3><a href="https://researchers.adelaide.edu.au/profile/qi.wu01" target="_blank" rel="noopener">Qi Wu</a></h3><p>Adelaide University</p><p class="topic">Vision, language, and action</p><span class="pill">Speaker · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://sherryy.github.io/" target="_blank" rel="noopener" data-i="SY"><img src="photos/sherry-yang.jpg" alt="Sherry Yang" loading="lazy" onerror="this.remove()"></a><h3><a href="https://sherryy.github.io/" target="_blank" rel="noopener">Sherry Yang</a></h3><p>NYU &amp; Google DeepMind</p><p class="topic">Generative world models and RL</p><span class="pill">Speaker · Confirmed</span></article>
+        <article class="person"><a class="avatar" href="https://boleizhou.github.io/" target="_blank" rel="noopener" data-i="BZ"><img src="photos/bolei-zhou.jpg" alt="Bolei Zhou" loading="lazy" onerror="this.remove()"></a><h3><a href="https://boleizhou.github.io/" target="_blank" rel="noopener">Bolei Zhou</a></h3><p>UCLA</p><p class="topic">Computer vision and robot learning</p><span class="pill">Panelist · Confirmed</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="timeline" id="dates">
+    <div class="wrap">
+      <div class="eyebrow section-kicker">Planning milestones</div>
+      <h2>Key dates</h2>
+      <div class="dates">
+        <div class="date"><b>December 2026</b><span>Planned website launch and call for papers</span></div>
+        <div class="date"><b>1 February 2027</b><span>Proposed deadline for research, short, and position papers</span></div>
+        <div class="date"><b>26 February 2027 · AoE</b><span>Proposed author notification</span></div>
+        <div class="date"><b>ICLR workshop day · TBA</b><span>One-day, in-person event; conference to assign the date</span></div>
+      </div>
+      <p class="dates-note">All milestones are subject to workshop acceptance and the final conference schedule. AoE means Anywhere on Earth.</p>
+    </div>
+  </section>
+
+  <section id="program">
+    <div class="wrap schedule">
+      <aside><div class="eyebrow section-kicker">Tentative program</div><h2>A day built for exchange.</h2><p>The morning sessions ask what agents bring to physical tasks and what reasoning adds. The afternoon sessions ask what must be learned through interaction, and how we know it generalizes. Seven proposed talks, contributed spotlights, two poster sessions, and a panel. Topics and times may change.</p></aside>
+      <div class="agenda">
+        <div class="slot"><time>08:30</time><div><strong>Welcome and opening remarks</strong><small>Ken Goldberg, organizer</small></div></div>
+        <div class="slot"><time>08:40</time><div><strong>From general-purpose agents to physical action</strong><small>Qiuyue Wang</small></div></div>
+        <div class="slot"><time>09:10</time><div><strong>What transfers from vision–language pretraining to embodied action?</strong><small>Qi Wu</small></div></div>
+        <div class="slot"><time>09:40</time><div><strong>Reasoning-based AI systems</strong><small>Daniel Khashabi</small></div></div>
+        <div class="slot"><time>10:10</time><div><strong>Foundation models for agentic autonomous systems</strong><small>Marco Pavone</small></div></div>
+        <div class="slot"><time>10:40</time><div><strong>Contributed spotlights A</strong></div></div>
+        <div class="slot highlight"><time>11:10</time><div><strong>Poster session A and coffee</strong></div></div>
+        <div class="slot"><time>12:00</time><div><strong>Lunch and informal exchange</strong></div></div>
+        <div class="slot"><time>13:00</time><div><strong>Learning to act through Generative world models as simulators</strong><small>Sherry Yang</small></div></div>
+        <div class="slot"><time>13:30</time><div><strong>Learning from sensorimotor experience</strong><small>Jitendra Malik</small></div></div>
+        <div class="slot"><time>14:00</time><div><strong>Safety and robustness for physical agents</strong><small>Anirudha Majumdar</small></div></div>
+        <div class="slot"><time>14:30</time><div><strong>Contributed spotlights B</strong></div></div>
+        <div class="slot highlight"><time>15:00</time><div><strong>Poster session B and coffee</strong></div></div>
+        <div class="slot"><time>16:00</time><div><strong>Panel discussion</strong><small>Reason more, learn more, or build a better controller? Moderated by Ken Goldberg</small></div></div>
+        <div class="slot"><time>16:50</time><div><strong>Synthesis and closing</strong></div></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel"><div class="wrap"><div><div class="eyebrow" style="margin-bottom:12px">Panel discussion</div><h2>Reason more, learn more, or build a better controller?</h2></div><p>What should count as reasoning in a physical agent, and which experiments can distinguish the benefits of reasoning, interaction, and stronger controllers?</p></div></div>
+
+  <section>
+    <div class="wrap"><div class="eyebrow section-kicker">Organizing team</div><h2>Bringing the communities together.</h2>
+      <div class="organizers">
+        <div><a class="avatar" href="https://cancui19.github.io/" target="_blank" rel="noopener" data-i="CC"><img src="photos/can-cui.jpg" alt="Can Cui" loading="lazy" onerror="this.remove()"></a><strong><a href="https://cancui19.github.io/" target="_blank" rel="noopener">Can Cui</a></strong><small>Bosch Research</small></div>
+        <div><a class="avatar" href="https://arc.engin.umich.edu/faculty/maani-ghaffari/" target="_blank" rel="noopener" data-i="MG"><img src="photos/maani-ghaffari.jpg" alt="Maani Ghaffari" loading="lazy" onerror="this.remove()"></a><strong><a href="https://arc.engin.umich.edu/faculty/maani-ghaffari/" target="_blank" rel="noopener">Maani Ghaffari</a></strong><small>University of Michigan</small></div>
+        <div><a class="avatar" href="https://goldberg.berkeley.edu/" target="_blank" rel="noopener" data-i="KG"><img src="photos/ken-goldberg.jpg" alt="Ken Goldberg" loading="lazy" onerror="this.remove()"></a><strong><a href="https://goldberg.berkeley.edu/" target="_blank" rel="noopener">Ken Goldberg</a></strong><small>UC Berkeley</small></div>
+        <div><a class="avatar" href="https://rowanmcallister.github.io/" target="_blank" rel="noopener" data-i="RM"><img src="photos/rowan-mcallister.jpg" alt="Rowan McAllister" loading="lazy" onerror="this.remove()"></a><strong><a href="https://rowanmcallister.github.io/" target="_blank" rel="noopener">Rowan McAllister</a></strong><small>TRI</small></div>
+        <div><a class="avatar" href="https://weiyana.github.io/" target="_blank" rel="noopener" data-i="YW"><img src="photos/yana-wei.jpg" alt="Yana Wei" loading="lazy" onerror="this.remove()"></a><strong><a href="https://weiyana.github.io/" target="_blank" rel="noopener">Yana Wei</a></strong><small>Johns Hopkins University</small></div>
+        <div><a class="avatar" href="https://colorfulfuture.github.io/" target="_blank" rel="noopener" data-i="YX"><img src="photos/yi-xu.jpg" alt="Yi Xu" loading="lazy" onerror="this.remove()"></a><strong><a href="https://colorfulfuture.github.io/" target="_blank" rel="noopener">Yi Xu</a></strong><small>Bosch Research</small></div>
+        <div><a class="avatar" href="https://zengxianyu.github.io/" target="_blank" rel="noopener" data-i="YZ"><img src="photos/yu-zeng.jpg" alt="Yu Zeng" loading="lazy" onerror="this.remove()"></a><strong><a href="https://zengxianyu.github.io/" target="_blank" rel="noopener">Yu Zeng</a></strong><small>TRI</small></div>
+        <div><a class="avatar" href="https://cheng-zhang.org/" target="_blank" rel="noopener" data-i="CZ"><img src="photos/cheng-zhang.jpg" alt="Cheng Zhang" loading="lazy" onerror="this.remove()"></a><strong><a href="https://cheng-zhang.org/" target="_blank" rel="noopener">Cheng Zhang</a></strong><small>Ellison Institute of Technology, Oxford</small></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq">
+    <div class="wrap faqgrid">
+      <div><div class="eyebrow section-kicker">Practical details</div><h2>Good to know.</h2></div>
+      <div>
+        <details><summary>Do I need access to a robot?</summary><p>No. The proposal welcomes simulation-only work, along with work on physical systems.</p></details>
+        <details><summary>Is my work in scope if it isn’t robotics?</summary><p>Yes, if an agent acts on a physical process (for example, energy or industrial control, or laboratory automation) and the paper addresses transfer, reasoning, or learning from interaction. Application results alone are out of scope.</p></details>
+        <details><summary>What should a position paper include?</summary><p>A clear, testable claim about where physical competence comes from (pretraining, inference-time reasoning, or interaction) and a concrete experiment that could support or refute it. Submit it to the 2–4 page short-paper track.</p></details>
+        <details><summary>Are work in progress and negative results welcome?</summary><p>Yes. Methods, theory, diagnostic evaluations, negative results, position papers, and ongoing research are within scope.</p></details>
+        <details><summary>Will papers be archival?</summary><p>The proposed research and short-paper tracks are non-archival. Final submission details will be published with the call.</p></details>
+        <details><summary>What if an accepted contributor cannot attend?</summary><p>The organizers plan to accommodate exceptional circumstances, such as visa issues, by displaying a poster on the contributor’s behalf and, with permission, hosting a prerecorded presentation.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap foot"><div><strong>Agentic Physical AI</strong><br><small>Generalization, reasoning, and learning through interaction.</small></div><small>Proposed ICLR 2027 workshop. Program, participation details, and dates are subject to acceptance and confirmation.</small><a href="#top">Back to top ↑</a></div></footer>
+</body>
+</html>
